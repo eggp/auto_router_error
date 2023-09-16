@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../route/auto_router.gr.dart';
+
 @RoutePage(deferredLoading: true)
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -12,11 +14,11 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         FilledButton(
-          onPressed: null,
-          child: Text('navigate to second page'),
+          onPressed: () => context.navigateTo(const SecondPageRoute()),
+          child: const Text('navigate to second page'),
         )
       ],
     );
